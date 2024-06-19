@@ -46,9 +46,9 @@ Outputs:
 1. Copy the build artifacts to their locations in /var/spacedev
 
     ```bash
-    sudo mkdir -p /var/spacedev/nuget/mts
+    sudo mkdir -p /var/spacedev/nuget/vth
 
-    sudo cp /var/spacedev/tmp/vth/amd64/nuget/Microsoft.Azure.SpaceSDK.PlatformServices.VTH.Plugins.0.11.0.nupkg /var/spacedev/nuget/mts
+    sudo cp /var/spacedev/tmp/vth/amd64/nuget/Microsoft.Azure.SpaceSDK.VTH.Plugins.0.11.0.nupkg /var/spacedev/nuget/vth
     ```
 
 1. Push the artifacts to the container registry
@@ -56,7 +56,7 @@ Outputs:
     ```bash
     # Push the nuget package to the container registry
     /var/spacedev/build/push_build_artifact.sh \
-            --artifact /var/spacedev/nuget/mts/Microsoft.Azure.SpaceSDK.PlatformServices.VTH.Plugins.0.11.0.nupkg \
+            --artifact /var/spacedev/nuget/vth/Microsoft.Azure.SpaceSDK.VTH.Plugins.0.11.0.nupkg \
             --annotation-config azure-orbital-space-sdk-vth.yaml \
             --architecture amd64 \
             --artifact-version 0.11.0
