@@ -1,6 +1,6 @@
 # Azure Orbital Space SDK - VTH
 
-[![spacefx-dev-build-publish](https://github.com/microsoft/azure-orbital-space-sdk-core/actions/workflows/devcontainer-feature-build-publish.yml/badge.svg)](https://github.com/microsoft/azure-orbital-space-sdk-core/actions/workflows/devcontainer-feature-build-publish.yml)
+[![vth-build](https://github.com/microsoft/azure-orbital-space-sdk-vth/actions/workflows/vth-build-publish.yaml/badge.svg)](https://github.com/microsoft/azure-orbital-space-sdk-vth/actions/workflows/vth-build-publish.yaml)
 
 This repository hosts the VTH.
 
