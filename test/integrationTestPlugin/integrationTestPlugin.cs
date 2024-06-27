@@ -37,6 +37,8 @@ public class IntegrationTestPlugin : Microsoft.Azure.SpaceFx.VTH.Plugins.PluginB
     public override Task<SensorData?> SensorData(SensorData? input_request) => Task.Run(() => {
         if (input_request == null) return input_request;
         input_request.ResponseHeader.Status = MessageFormats.Common.StatusCodes.Successful;
+        // Return the message to the app that sent it
+        Core.DirectToApp(input_request.ResponseHeader.AppId, input_request);
         return input_request;
     });
 
