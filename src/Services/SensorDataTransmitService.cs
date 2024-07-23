@@ -57,10 +57,10 @@ public partial class Services {
         /// <param name="sensorData">The sensor data to be transmitted.</param>
         protected internal void QueueSensorData(MessageFormats.HostServices.Sensor.SensorData sensorData) {
             try {
-                _logger.LogTrace("Adding LinkRequest to queue. (trackingId: '{trackingId}' / correlationId: '{correlationId}')", sensorData.ResponseHeader.TrackingId, sensorData.ResponseHeader.CorrelationId);
+                _logger.LogTrace("Adding LinkRequest to queue. (trackingId: '{trackingId}' / correlationId: '{correlationId}' / status: '{status}')", sensorData.ResponseHeader.TrackingId, sensorData.ResponseHeader.CorrelationId, sensorData.ResponseHeader.Status);
                 _sensorDataQueue.Add(sensorData);
             } catch (Exception ex) {
-                _logger.LogError("Failure storing LinkRequest to queue (trackingId: '{trackingId}' / correlationId: '{correlationId}').  Error: {errorMessage}", sensorData.ResponseHeader.TrackingId, sensorData.ResponseHeader.CorrelationId, ex.Message);
+                _logger.LogError("Failure storing LinkRequest to queue (trackingId: '{trackingId}' / correlationId: '{correlationId}' / status: '{status}').  Error: {errorMessage}", sensorData.ResponseHeader.TrackingId, sensorData.ResponseHeader.CorrelationId, sensorData.ResponseHeader.Status, ex.Message);
             }
         }
     }
