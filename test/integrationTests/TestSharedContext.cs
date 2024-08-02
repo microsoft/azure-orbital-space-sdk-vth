@@ -26,7 +26,8 @@ public class TestSharedContext : IDisposable
         if (_grpcHost != null) return;
 
         var builder = WebApplication.CreateBuilder();
-                // Load the configuration being supplicated by the cluster first
+
+        // Load the configuration being supplicated by the cluster first
         builder.Configuration.AddJsonFile(Path.Combine("{env:SPACEFX_CONFIG_DIR}", "config", "appsettings.json"), optional: true, reloadOnChange: false);
 
         // Load any local appsettings incase they're overriding the cluster values
